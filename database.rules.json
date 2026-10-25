@@ -1,0 +1,28 @@
+{
+  "rules": {
+    ".read": false,
+    ".write": false,
+    "pins": {
+      ".read": true,
+      "$person": {
+        ".write": "!data.exists() && ($person === 'zahra' || $person === 'sarah' || $person === 'maryam' || $person === 'hussein')",
+        ".validate": "newData.isString() && newData.val().length === 64"
+      }
+    },
+    "fights": {
+      ".read": true,
+      "$pair": {
+        ".write": "$pair.matches(/^(zahra|sarah|maryam|hussein)__(zahra|sarah|maryam|hussein)$/)",
+        ".validate": "newData.hasChildren(['level', 'updatedAt']) && newData.child('level').isNumber() && newData.child('level').val() >= 0 && newData.child('level').val() <= 3 && (!newData.hasChild('note') || (newData.child('note').isString() && newData.child('note').val().length <= 140))"
+      }
+    },
+    "log": {
+      ".read": true,
+      ".indexOn": ["at"],
+      "$entry": {
+        ".write": "!data.exists()",
+        ".validate": "newData.hasChildren(['from', 'to', 'level', 'at']) && newData.child('level').isNumber() && (!newData.hasChild('note') || newData.child('note').val().length <= 140)"
+      }
+    }
+  }
+}

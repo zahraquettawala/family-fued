@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Quetta Feud Tracker</title>
+<meta name="description" content="Live map of who in the Quetta house is fighting with who.">
+<meta name="theme-color" content="#16131f">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏠</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div>
+      <p class="eyebrow">The Quetta House</p>
+      <h1>Feud Tracker</h1>
+    </div>
+    <button id="logoutBtn" class="ghost" hidden>Log out</button>
+  </header>
+
+  <div id="demoBanner" class="demo" hidden>Demo mode — changes only save on this phone until Firebase is connected.</div>
+
+  <section id="threat" class="threat card" aria-live="polite">
+    <span class="threat-label">Household threat level</span>
+    <strong id="threatText">Loading…</strong>
+    <div class="meter"><div id="threatFill"></div></div>
+  </section>
+
+  <section class="card graph-card">
+    <svg id="graph" viewBox="0 0 360 340" role="img" aria-label="Who is fighting with who"></svg>
+    <div class="legend" id="legend"></div>
+    <p class="hint">Arrows point from the person who's mad to the person they're mad at.</p>
+  </section>
+
+  <section id="loginCard" class="card">
+    <h2>Who are you?</h2>
+    <div id="whoGrid" class="who-grid"></div>
+    <form id="pinForm" class="pin-form" hidden>
+      <p id="pinPrompt"></p>
+      <input id="pinInput" inputmode="numeric" pattern="[0-9]{4}" maxlength="4" autocomplete="off" placeholder="••••" aria-label="4-digit PIN">
+      <input id="pinInput2" inputmode="numeric" pattern="[0-9]{4}" maxlength="4" autocomplete="off" placeholder="again" aria-label="Repeat PIN" hidden>
+      <div class="row">
+        <button type="button" id="pinCancel" class="ghost">Back</button>
+        <button type="submit" id="pinSubmit">Go</button>
+      </div>
+      <p id="pinError" class="error" role="alert"></p>
+    </form>
+  </section>
+
+  <section id="feelingsCard" class="card" hidden>
+    <h2 id="feelingsTitle">How do you feel about…</h2>
+    <div id="feelings"></div>
+  </section>
+
+  <section class="card">
+    <h2>Who can talk to who</h2>
+    <ul id="pairs" class="pairs"></ul>
+  </section>
+
+  <section class="card">
+    <h2>Latest drama</h2>
+    <ul id="feed" class="feed"></ul>
+  </section>
+
+  <footer>Made with love (and resentment).</footer>
+</div>
+<script type="module" src="app.js"></script>
+</body>
+</html>
