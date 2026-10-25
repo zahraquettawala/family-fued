@@ -4,8 +4,8 @@ import { firebaseConfig } from "./firebase-config.js";
 const PEOPLE = [
   { id: "zahra",   name: "Zahra", sub: "the baby",      emoji: "💅", x: 80,  y: 80 },
   { id: "sarah",   name: "Sarah", sub: "moving out",    emoji: "📦", x: 280, y: 80 },
-  { id: "maryam",  name: "Mom",   sub: "Maryam",        emoji: "👑", x: 80,  y: 250 },
-  { id: "hussein", name: "Dad",   sub: "Hussein",       emoji: "📺", x: 280, y: 250 },
+  { id: "mariam",  name: "Mom",   sub: "Mariam",        emoji: "👑", x: 80,  y: 250 },
+  { id: "hussain", name: "Dad",   sub: "Hussain",       emoji: "📺", x: 280, y: 250 },
 ];
 const P = Object.fromEntries(PEOPLE.map(p => [p.id, p]));
 const LEVELS = [

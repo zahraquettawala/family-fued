@@ -1,6 +1,6 @@
 # Quetta Feud Tracker 🏠💥
 
-A live map of who in the Quetta house is fighting with who. Zahra, Sarah, Mom (Maryam) and Dad (Hussein) each log in with their name and a 4-digit PIN, set how they feel about everyone else, and the network chart, "who can talk to who" list and drama feed update for the whole family in real time.
+A live map of who in the Quetta house is fighting with who. Zahra, Sarah, Mom (Mariam) and Dad (Hussain) each log in with their name and a 4-digit PIN, set how they feel about everyone else, and the network chart, "who can talk to who" list and drama feed update for the whole family in real time.
 
 ## Levels
 🕊️ Peace · 😒 Side-eye · 😤 Mad · 🧊 Not speaking

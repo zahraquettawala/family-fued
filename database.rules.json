@@ -5,14 +5,14 @@
     "pins": {
       ".read": true,
       "$person": {
-        ".write": "!data.exists() && ($person === 'zahra' || $person === 'sarah' || $person === 'maryam' || $person === 'hussein')",
+        ".write": "!data.exists() && ($person === 'zahra' || $person === 'sarah' || $person === 'mariam' || $person === 'hussain')",
         ".validate": "newData.isString() && newData.val().length === 64"
       }
     },
     "fights": {
       ".read": true,
       "$pair": {
-        ".write": "$pair.matches(/^(zahra|sarah|maryam|hussein)__(zahra|sarah|maryam|hussein)$/)",
+        ".write": "$pair.matches(/^(zahra|sarah|mariam|hussain)__(zahra|sarah|mariam|hussain)$/)",
         ".validate": "newData.hasChildren(['level', 'updatedAt']) && newData.child('level').isNumber() && newData.child('level').val() >= 0 && newData.child('level').val() <= 3 && (!newData.hasChild('note') || (newData.child('note').isString() && newData.child('note').val().length <= 140))"
       }
     },
